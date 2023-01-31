@@ -7,20 +7,18 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                git 'https://github.com/daveotengo/SimpleArithmethic.git'
-                sh './mvn clean package'
+            
+                sh 'mvn clean package'
             }
         }
         stage('Test') {
             steps {
                 echo 'Testing..'
-                sh './mvn test'
+                sh 'mvn test'
             }
             
             post {
-	           	always {
-	            	junit '**/target/surefire-reports/TEST=*.xml'
-	            }
+	           
 	            success {
 	            echo 'Archiving the artifact'
 	            archiveArtifacts artifacts: '**/target/*.war'
