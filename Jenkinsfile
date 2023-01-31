@@ -23,7 +23,7 @@ pipeline {
 	            }
 	            success {
 	            echo 'Archiving the artifact'
-	            archiveArtifacts artifact: '**/target/*.war'
+	            archiveArtifacts artifacts: '**/target/*.war'
 	            }
             }
         }
