@@ -18,9 +18,7 @@ pipeline {
             }
             
             post {
-	           	always {
-	            	junit '**/target/surefire-reports/TEST=*.xml'
-	            }
+	           
 	            success {
 	            echo 'Archiving the artifact'
 	            archiveArtifacts artifacts: '**/target/*.war'
