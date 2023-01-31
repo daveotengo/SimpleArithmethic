@@ -7,7 +7,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                git 'https://github.com/daveotengo/SimpleArithmethic.git'
+            
                 sh './mvn clean package'
             }
         }
